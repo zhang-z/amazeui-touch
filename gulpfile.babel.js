@@ -20,8 +20,9 @@ import BS from 'browser-sync';
 import pkg from './package.json';
 import getMarked from './docs/_utils/getMarked';
 
+const ENV = process.env.NODE_ENV;
 const $ = gulpLoadPlugins();
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = ENV === 'production' || ENV === 'travisci';
 const banner = `/** ${pkg.title} v${pkg.version} | by Amaze UI Team
   * (c) ${$.util.date(Date.now(), 'UTC:yyyy')} AllMobilize, Inc., Licensed under ${pkg.license}
   * ${$.util.date(Date.now(), 'isoDateTime')}

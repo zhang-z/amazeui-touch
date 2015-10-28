@@ -3,16 +3,15 @@ sudo: false
 language: node_js
 
 node_js:
-  - '0.10'
-  - '0.12'
+#  - '0.10'
+#  - '0.12'
   - node
 
 env:
   global:
-    - NODE_ENV=production
+    - NODE_ENV=travisci
 
 before_install:
   - npm install -g gulp
-  - npm install --dev
 
 script: gulp build
