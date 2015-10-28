@@ -13,5 +13,6 @@ node_modules
 .eslintrc
 .gitignore
 .npmignore
+.travis.yml
 gulpfile.babel.js
 webpack.config.js
