@@ -81,7 +81,7 @@ Amaze UI Touch 专为移动打造，在技术实现、交互设计上只考虑�
    ReactDOM.render(<App />, document.getElementById('root'));
    ```
 
-ES2015/JSX 编译参见 Amaze UI Touch Starter Kit。
+ES2015/JSX 编译参见 [Amaze UI Touch Starter Kit](https://github.com/amazeui/amt-starter-kit)。
 
 
 
@@ -123,4 +123,3 @@ ES2015/JSX 编译参见 Amaze UI Touch Starter Kit。
 ## License
 
 MIT © 2015 AllMobilize Inc.
-
