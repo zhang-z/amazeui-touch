@@ -1,0 +1,90 @@
+# 开始使用
+
+## 准备工作
+
+### 开发环境配置
+
+- 下载安装 [Node.js](https://nodejs.org/en/download/)（推荐使用 `4.x` 最新正式版）
+- 一些 npm 模块编译需要环境支持，Windows 用户会麻烦一些，具体配置说明参见：https://github.com/nodejs/node-gyp#installation
+
+### 预备知识
+
+现在开源社区的前端资源数不胜数，但不意味着一个对 HTML、CSS、JavaScript 一无所知或知之甚少的人能有效、高效地利用这些资源达成目标。对于初学者，个人并不建议刚入门就使用框架（库），只知其然时就扎进去，不如夯实基础，到知其所以然以后再开始使用，这样对个人提高更有裨益。请记住，库（框架）不是模板，能为开发节省时间，但不能代替基础知识学习。
+
+使用 Amaze UI Touch 之前，除了熟悉 HTML、CSS、JavaScript 以外，还应了解相关的工具和项目。
+
+**相关项目**：
+
+- [React 官网](http://facebook.github.io/react/)（v0.14.0+）
+- [React Router](https://github.com/rackt/react-router/)（可选）
+- [Sass](http://sass-lang.com/)：Amaze UI Touch 样式使用 Sass 编写，如需深入二次开发，应当知道如何使用 Sass。
+
+**构建工具：**
+
+传统的开发方式仍然可用，但如果想提高开发效率、使用新技术，一些工具必不可少。
+
+- [Babel](https://babeljs.io/)
+- [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+- Browserify / [Webpack](http://webpack.github.io/)
+- [Grunt](http://gruntjs.com/)（廉颇老矣，尚能饭否？）
+
+
+## 编写页面
+
+如果你是新手，建议使用 [**Amaze UI Touch Starter Kit**](https://github.com/amazeui/amt-starter-kit)。
+
+如果你有 React、npm 使用经验，则可以按熟悉的套路来。
+
+### 安装 Amaze UI Touch
+
+```bash
+npm install --save-dev amazeui-touch
+```
+
+### Hello World
+
+JavaScript:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  Button,
+} from 'amazeui-touch';
+
+ReactDOM.render(<Button>Hello World</Button>, document.getElementById('root'));
+```
+
+HTML：
+
+```html
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Amaze UI Touch</title>
+  <meta name="renderer" content="webkit">
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="alternate icon" type="image/png" href="i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="AMUI React"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="path/to/amazeui.touch.min.css"/>
+</head>
+<body>
+  <div id="root">
+  </div>
+  <!-- app.js 为上面的代码编译打包后的文件 -->
+  <script src="app.js"></script>
+</body>
+</html>
+```
+
+进阶使用可参见 kitchen-sink 源码。
