@@ -73,6 +73,8 @@
   },
   "babel": {
     "stage": 0,
-    "loose": "all"
+    "loose": "all",
+    "optional": ["es7.objectRestSpread"],
+    "plugins": ["object-assign"]
   }
 }

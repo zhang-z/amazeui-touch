@@ -48,10 +48,12 @@ const docsPaths = {
   ksDist: 'www/kitchen-sink'
 };
 
+/*
+// move to package.json
 const babelOptions = {
   optional: ['es7.objectRestSpread'],
   plugins: ['object-assign'],
-};
+};*/
 
 const autoprefixerOptions = {
   browsers: ['> 1%', 'last 2 versions', 'ie 10']
@@ -114,7 +116,7 @@ gulp.task('styleDev', ['style:scss', 'style:fonts', 'style:watch']);
 gulp.task('build:babel', () => {
   return gulp.src('src/js/**/*')
     .pipe(replaceVersion())
-    .pipe($.babel(babelOptions))
+    .pipe($.babel())
     .pipe(gulp.dest('lib'));
 });
 
@@ -150,7 +152,7 @@ gulp.task('docs:clean', () => {
 });
 
 let bsf = (options) => {
-  const babelify = [['babelify', babelOptions]];
+  const babelify = ['babelify'];
   let transform = Array.isArray(options.transform) ?
     babelify.concat(options.transform) : babelify;
 
@@ -247,7 +249,8 @@ gulp.task('docs:replace', () => {
 gulp.task('docs:server', () => {
   let bs = BS.create();
   bs.init({
-    server: ['www']
+    server: ['www'],
+    open: 'external',
   });
 
   gulp.watch(`${docsPaths.dist}/**/*`, bs.reload);

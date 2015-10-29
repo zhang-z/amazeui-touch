@@ -5,8 +5,22 @@ import {
 import {
   Container,
 } from '../../../src/js';
+import {
+  QRCode,
+} from '../../_utils';
 
 const Index = React.createClass({
+  componentDidMount() {
+    const {
+      host,
+      } = global.location;
+    this._qrcode = new QRCode(this.refs.qrcode, {
+      text: `http://${host}/kitchen-sink/`,
+      width: 80,
+      height: 80,
+    });
+  },
+
   render() {
     const year = new Date().getFullYear();
 
@@ -46,6 +60,7 @@ const Index = React.createClass({
                   target="_blank"
                 >贡献代码</a>
               </div>
+              <div ref="qrcode" className="ks-qrcode am-hide-sm-only"></div>
             </div>
           </div>
         </div>

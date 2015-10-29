@@ -48,10 +48,12 @@ const Doc = React.createClass({
 
 import Highlight from './Highlight';
 import Prism from './Prism';
+import QRCode from './QRCode';
 
 export default {
   Markdown,
   Highlight,
   Doc,
   Prism,
+  QRCode,
 };
