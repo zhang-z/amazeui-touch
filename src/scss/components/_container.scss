@@ -97,11 +97,14 @@
 // Scrollable containers
 
 .#{$container-prefix}-scrollable {
-  position: relative;
+  // position: relative;
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+
+  // Fixes: https://github.com/amazeui/amazeui-touch/issues/8
+  // @see http://weblog.west-wind.com/posts/2015/Jun/05/IPad-Scroll-Issues-with-Fixed-Content
+  // -webkit-overflow-scrolling: touch;
 
   // introduce iOS style springy scrolling
   &:before,

@@ -77,7 +77,7 @@
 // Animation
 // -----------------------------------------------------------------------------
 .#{$notification-prefix}-animated {
-  position: fixed;
+  position: absolute;
 }
 
 .#{$notification-prefix}-enter {
@@ -95,7 +95,7 @@
     opacity: .5;
   }
   to {
-    transform: none;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
@@ -103,7 +103,7 @@
 // Slide up
 @keyframes amt-notification-leave {
   from {
-    transform: none;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
   to {
