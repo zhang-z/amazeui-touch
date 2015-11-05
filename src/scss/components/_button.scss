@@ -44,6 +44,7 @@
       border-color: scale-color($background, $lightness: -15%);
     }
 
+    &:hover,
     &:active,
     &.#{map_get($am-states, active)} {
       @if $background-active == auto {
