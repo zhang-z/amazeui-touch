@@ -620,8 +620,12 @@ Prism.amtHighlight = function(options) {
 };
 
 // language and plugins
-require('./prism-bash')(Prism);
-require('./prism-jsx')(Prism);
-require('./prism-sass')(Prism);
+import prismBash from './prism-bash';
+import prismJSX from  './prism-jsx';
+import prismSass from './prism-sass';
+
+prismBash(Prism);
+prismJSX(Prism);
+prismSass(Prism);
 
 export default Prism;

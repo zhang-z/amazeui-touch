@@ -1,8 +1,5 @@
-export default {
-  NAMESPACE: null, // 'am'
-
-  CLASSNAMES: {
-    diabled: 'disabled',
-    active: 'active'
-  },
+export const NAMESPACE = null; // 'am'
+export const CLASSNAMES = {
+  disabled: 'disabled',
+  active: 'active',
 };

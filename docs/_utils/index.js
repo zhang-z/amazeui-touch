@@ -50,7 +50,7 @@ import Highlight from './Highlight';
 import Prism from './Prism';
 import QRCode from './QRCode';
 
-export default {
+export {
   Markdown,
   Highlight,
   Doc,

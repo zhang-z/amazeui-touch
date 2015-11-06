@@ -3,6 +3,9 @@ import {
   Container,
 } from '../../../src/js';
 import Sidebar from './Sidebar';
+import * as docs from '../../';
+
+docs['getting-started'] = docs.gettingStarted;
 
 const isSM = matchMedia('(max-width: 640px)').matches;
 
@@ -17,31 +20,7 @@ function isNodeInTree(node, tree) {
   return false;
 };
 
-let docs = {
-  container: require('../../container'),
-  normalize: require('../../normalize'),
-  grid: require('../../grid'),
-  accordion: require('../../accordion'),
-  badge: require('../../badge'),
-  button: require('../../button'),
-  card: require('../../card'),
-  icon: require('../../icon'),
-  form: require('../../form'),
-  group: require('../../group'),
-  list: require('../../list'),
-  loader: require('../../loader'),
-  modal: require('../../modal'),
-  navbar: require('../../navbar'),
-  notification: require('../../notification'),
-  offcanvas: require('../../offcanvas'),
-  popover: require('../../popover'),
-  slider: require('../../slider'),
-  tabbar: require('../../tabbar'),
-  tabs: require('../../tabs'),
-  typography: require('../../typography'),
-  utility: require('../../utility'),
-  'getting-started': require('../../gettin-started'),
-};
+const sidebar = <Sidebar />;
 
 const ComponentDoc = React.createClass({
   getInitialState() {
@@ -59,7 +38,9 @@ const ComponentDoc = React.createClass({
   },
 
   _clickHandler(e) {
-    if (isSM && !isNodeInTree(e.target, this.refs.sidebarToggle) &&
+    const isFilter = e.target === document.querySelector('#doc-filter');
+
+    if (isSM && !isFilter && !isNodeInTree(e.target, this.refs.sidebarToggle) &&
       this.state.sidebarActive) {
       this.setState({
         sidebarActive: !this.state.sidebarActive,

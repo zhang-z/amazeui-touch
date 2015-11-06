@@ -203,6 +203,7 @@ const Sidebar = React.createClass({
             onChange={this.applyFilter}
             ref="filter"
             type="text"
+            id="doc-filter"
             placeholder="查找组件" />
         </p>
         <hr className="am-margin-vertical-sm" />
