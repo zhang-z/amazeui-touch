@@ -8,6 +8,8 @@ const Loader = React.createClass({
   propTypes: {
     classPrefix: React.PropTypes.string,
     component: React.PropTypes.node,
+    amStyle: React.PropTypes.string,
+    rounded: React.PropTypes.bool,
   },
 
   getDefaultProps() {
@@ -29,8 +31,10 @@ const Loader = React.createClass({
       <Component
         {...props}
         className={classNames(classSet, className)}
-        dangerouslySetInnerHTML={{__html: '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="75" width="75" viewbox="0 0 75 75"><circle cx="37.5" cy="37.5" r="33.5" stroke-width="8"/></svg>'}}
       >
+        <div className={this.prefixClass('bounce1')} />
+        <div className={this.prefixClass('bounce2')} />
+        <div className={this.prefixClass('bounce3')} />
       </Component>
     )
   }

@@ -6,59 +6,59 @@
 // Output
 // -----------------------------------------------------------------------------
 .#{$loader-prefix} {
-  $easing: cubic-bezier(.8,.0,.4,.8);
-  $speed: 1320ms;       // animation time for each loop
-  $linecap: square;       // could be 'round', but the official one is square
-  $loops: 5;            // number of points where the arc meets
-  $arc: 0.72;         // fraction of the circumference that the arc grows to
-  $perimeter: pi() * 67px;  // circumference of the raw svg inner cricle
-
   display: inline-block;
-  @include square($loader-width);
-  // measure to prevent inline block spacing from affecting the outer rotation
-  font-size: 0;
-  animation: loader-outer $speed * $loops linear infinite;
+  text-align: center;
 
-  svg {
-    width: 100%;
-    height: 100%;
-    animation: loader-inner $speed linear infinite;
+  > div {
+    width: 16px;
+    height: 16px;
+    background-color: #888;
+    display: inline-block;
+    animation: amt-bouncedelay 1.4s infinite ease-in-out both;
 
-    circle {
-      fill: none;
-      stroke: $loader-color;
-      stroke-linecap: $linecap;
-      animation: loader-arc $speed $easing infinite;
+    + div {
+      margin-left: 5px;
     }
   }
 
-  @keyframes loader-outer {
-    to {
-      transform: rotate(360deg);
-    }
+  .#{$loader-prefix}-bounce1 {
+    animation-delay: -0.32s;
   }
 
-  @keyframes loader-inner {
-    0% {
-      transform: rotate(-360deg * (1 - $arc));
-    }
-    100% {
-      transform: rotate(0);
-    }
+  .#{$loader-prefix}-bounce2 {
+    animation-delay: -0.16s;
   }
 
-  @keyframes loader-arc {
-    0% {
-      stroke-dasharray: 1 $perimeter;
-      stroke-dashoffset: 0;
+  @keyframes amt-bouncedelay {
+    0%, 80%, 100% {
+      transform: scale(0);
     }
     40% {
-      stroke-dasharray: $arc * $perimeter, $perimeter;
-      stroke-dashoffset: 0;
+      transform: scale(1.0);
     }
-    100% {
-      stroke-dasharray: 1 $perimeter;
-      stroke-dashoffset: -$arc * $perimeter;
+  }
+}
+
+// Modifiers: shape
+// -----------------------------------------------------------------------------
+.#{$loader-prefix}-rounded {
+  > div {
+    border-radius: 100%;
+  }
+}
+
+// Modifiers: colors
+// -----------------------------------------------------------------------------
+@each $color-key, $color in $am-colors {
+  .#{$loader-prefix}-#{$color-key} {
+    > div {
+      background-color: $color;
     }
+  }
+}
+
+.#{$loader-prefix}-white {
+  > div {
+    background-color: #fff;
   }
 }
