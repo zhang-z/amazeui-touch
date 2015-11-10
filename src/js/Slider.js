@@ -294,6 +294,7 @@ const Slider = React.createClass({
       ...props
       } = this.props;
 
+    // TODO: 优化 swipe，左右方向阻止默认事件，垂直方向不阻止
     return (
       <Touchable
         {...props}
@@ -303,6 +304,7 @@ const Slider = React.createClass({
         onMouseOut={this.handleMouseOut}
         onSwipeLeft={this.handleSwipeLeft}
         onSwipeRight={this.handleSwipeRight}
+        preventDefault={false}
       >
         <ul className={this.prefixClass('slides')}>
           {React.Children.map(children, this.renderItem)}
