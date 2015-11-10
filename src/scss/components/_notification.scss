@@ -81,6 +81,10 @@
 }
 
 .#{$notification-prefix}-enter {
+  transform: translate3d(0, -100%, 0);
+}
+
+.#{$notification-prefix}-enter-active {
   animation: amt-notification-enter .3s ease-in-out;
 }
 

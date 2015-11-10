@@ -25,14 +25,14 @@
   background: $modal-background;
   backface-visibility: hidden;
   perspective: 1000px;
-  animation: modal-in $modal-duration ease-out;
+  animation: amt-modal-in $modal-duration ease-out;
 
   .#{$modal-prefix}-out & {
-    animation-name: modal-out;
+    animation-name: amt-modal-out;
   }
 }
 
-@keyframes modal-in {
+@keyframes amt-modal-in {
   from {
     opacity: 0;
     transform: scale3d(0.5, 0.5, 1);
@@ -44,7 +44,7 @@
   }
 }
 
-@keyframes modal-out {
+@keyframes amt-modal-out {
   to {
     opacity: 0;
     transform: scale3d(0.5, 0.5, 1);

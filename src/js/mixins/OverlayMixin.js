@@ -12,16 +12,16 @@ export default {
     container: React.PropTypes.node
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     this._renderOverlay();
   },
 
-  componentDidUpdate: function() {
+  componentDidUpdate() {
     this._renderOverlay();
   },
 
   // Remove Overlay related DOM node
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     this._unmountOverlay();
 
     if (this._overlayWrapper) {
@@ -31,13 +31,13 @@ export default {
   },
 
   // Create Overlay wrapper
-  _mountOverlayWrapper: function() {
+  _mountOverlayWrapper() {
     this._overlayWrapper = document.createElement('div');
     this.getContainerDOMNode().appendChild(this._overlayWrapper);
   },
 
   // Render Overlay to wrapper
-  _renderOverlay: function() {
+  _renderOverlay() {
     if (!this._overlayWrapper) {
       this._mountOverlayWrapper();
     }
@@ -53,12 +53,12 @@ export default {
   },
 
   // Remove a mounted Overlay from wrapper
-  _unmountOverlay: function() {
+  _unmountOverlay() {
     ReactDOM.unmountComponentAtNode(this._overlayWrapper);
     this._overlayInstance = null;
   },
 
-  getOverlayDOMNode: function() {
+  getOverlayDOMNode() {
     if (!this.isMounted()) {
       throw new Error(
         `getOverlayDOMNode(): A component must be mounted to
@@ -74,7 +74,7 @@ export default {
     return null;
   },
 
-  getContainerDOMNode: function() {
+  getContainerDOMNode() {
     return ReactDOM.findDOMNode(this.props.container) || document.body;
   }
 };

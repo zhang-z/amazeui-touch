@@ -48,7 +48,7 @@ const OffCanvas = React.createClass({
     classSet[this.prefixClass(placement)] = !!placement;
     classSet[this.prefixClass(animation)] = !!animation;
 
-    let offCanvas = (
+    const offCanvas = (
       <div
         {...props}
         className={classNames(classSet, className)}
