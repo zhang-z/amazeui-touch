@@ -36,9 +36,12 @@ const Modal = React.createClass({
       confirmText: '确定',
       cancelText: '取消',
       closeBtn: true,
-      onSelect: () => {},
-      onOpen: () => {},
-      onClosed: () => {},
+      onSelect: () => {
+      },
+      onOpen: () => {
+      },
+      onClosed: () => {
+      },
     };
   },
 
@@ -72,7 +75,8 @@ const Modal = React.createClass({
   // Get input data for prompt modal
   getFieldData() {
     let data = [];
-    let inputs = ReactDOM.findDOMNode(this).querySelectorAll('input[type=text]');
+    let inputs = ReactDOM.findDOMNode(this)
+      .querySelectorAll('input[type=text]');
 
     if (inputs) {
       for (let i = 0; i < inputs.length; i++) {
@@ -257,7 +261,12 @@ const Modal = React.createClass({
   },
 
   renderBackdrop(children) {
-    let onClick = this.handleBackdropClick || null;
+    const onClick = this.handleBackdropClick || null;
+    const preventDefault = (e) => {
+      // prevent window scroll when touch backdrop
+      e.preventDefault();
+    };
+
     let classSet = {};
 
     classSet[this.prefixClass('backdrop')] = true;
@@ -268,9 +277,11 @@ const Modal = React.createClass({
       <span>
         {children}
         <div
-          onClick={onClick}
-          ref="backdrop"
           className={classNames(classSet)}
+          style={{height: window.innerHeight}}
+          ref="backdrop"
+          onClick={onClick}
+          onTouchMove={preventDefault}
         ></div>
       </span>
     );

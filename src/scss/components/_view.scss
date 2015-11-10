@@ -22,8 +22,8 @@
   @include square(100%);
   overflow: hidden;
   background: $body-background;
-
-  @extend %force-hardware-acceleration;
+  backface-visibility: hidden;
+  // transform: translateZ(0);
 }
 
 // Animations

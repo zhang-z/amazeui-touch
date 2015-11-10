@@ -6,7 +6,7 @@ import {
   Highlight,
 } from '../_utils';
 
-const IconDoc = React.createClass({
+const LoaderDoc = React.createClass({
   render() {
     return (
       <Doc>
@@ -14,11 +14,11 @@ const IconDoc = React.createClass({
         <Highlight
           demo="loader"
         >
-          {fs.readFileSync(`${__dirname}/../../kitchen-sink/pages/IconExample.js`, 'utf-8')}
+          {fs.readFileSync(`${__dirname}/../../kitchen-sink/pages/LoaderExample.js`, 'utf-8')}
         </Highlight>
       </Doc>
     );
   }
 });
 
-export default IconDoc;
+export default LoaderDoc;
