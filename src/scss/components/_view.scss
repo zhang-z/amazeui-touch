@@ -22,6 +22,7 @@
   @include square(100%);
   overflow: hidden;
   background: $body-background;
+
   backface-visibility: hidden;
   // transform: translateZ(0);
 }
@@ -125,10 +126,6 @@
   animation-fill-mode: forwards;
 }
 
-[class*="#{$view-prefix}-transition"] {
-  @extend %view-transition-common;
-}
-
 .#{$view-prefix}-transition-sfr-enter-active,
 .#{$view-prefix}-transition-sfl-enter-active {
   pointer-events: none;
@@ -141,13 +138,13 @@
   z-index: $z-index-view-bottom;
 }
 
-/*.#{$view-prefix}-transition-sfl-enter-active,
+// animation common
+.#{$view-prefix}-transition-sfl-enter-active,
 .#{$view-prefix}-transition-sfl-leave,
 .#{$view-prefix}-transition-sfr-enter-active,
 .#{$view-prefix}-transition-sfr-leave {
-  animation-duration: $view-transition-duration;
-  animation-timing-function: $view-prefix-transition-timing-function;
-}*/
+  @extend %view-transition-common;
+}
 
 .#{$view-prefix}-transition-sfr-enter-active {
   animation-name: amt-view-sfr-enter;
@@ -183,13 +180,13 @@
   z-index: $z-index-view-top;
 }
 
-/*.#{$view-prefix}-transition-rfl-enter-active,
+// animation common
+.#{$view-prefix}-transition-rfl-enter-active,
 .#{$view-prefix}-transition-rfl-leave,
 .#{$view-prefix}-transition-rfr-enter-active,
 .#{$view-prefix}-transition-rfr-leave {
-  animation-duration: $view-transition-duration;
-  animation-timing-function: $view-transition-timing-function;
-}*/
+  @extend %view-transition-common;
+}
 
 .#{$view-prefix}-transition-rfr-enter-active {
   animation-name: amt-view-rfr-enter;

@@ -2,6 +2,11 @@
 // =============================================================================
 
 // Make extra sure we're using the whole window
+// @see http://mir.aculo.us/2011/07/29/prevent-rubber-band-scrolling-for-single-page-apps-in-safari-5-1/
+// @see http://www.luster.io/blog/9-29-14-mobile-web-checklist.html
+// @see http://blog.christoffer.me/post/2015-06-10-six-things-i-learnt-about-ios-rubberband-overflow-scrolling/#.VkL9ra4rL4M
+// @see https://github.com/luster-io/prevent-overscroll
+// @see http://browser.colla.me/show/disable_elastic_scroll_on_iOS_safari
 html,
 body {
   height: 100%;
@@ -58,7 +63,7 @@ a {
 }
 
 // Remove max-width style for map
-// TODO: add selectors like Baidu Map, Sogou Map,AutoNavi, .etc
+// TODO: add selectors like Baidu Map, Sogou Map, AutoNavi, .etc
 #map_canvas,
 .map_canvas {
   img,
