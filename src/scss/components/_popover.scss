@@ -18,15 +18,14 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, .2);
   animation-duration: $popover-duration;
   animation-timing-function: ease-out;
-
-  @extend %animation-slide-top-fixed;
+  animation-name: amt-slide-top-fixed;
 }
 
 .#{$namespace}popover-out {
-  animation-name: popover-out;
+  animation-name: amt-popover-out;
 }
 
-@keyframes popover-out {
+@keyframes amt-popover-out {
   to {
     opacity: 0;
     transform: translateY(-10px);

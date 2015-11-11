@@ -269,9 +269,9 @@
   animation-duration: $modal-duration;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  animation-name: fade-in;
+  animation-name: amt-fade-in;
 
   &#{$this-selector}-out {
-    animation-name: fade-out;
+    animation-name: amt-fade-out;
   }
 }
