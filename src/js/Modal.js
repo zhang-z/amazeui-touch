@@ -5,6 +5,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 import ClassNameMixin from './mixins/ClassNameMixin';
 import CSSCore from './utils/CSSCore';
 import Events from './utils/Events';
@@ -12,6 +13,9 @@ import TransitionEvents from './utils/TransitionEvents';
 import Button from './Button';
 import Icon from './Icon';
 import Loader from './Loader';
+
+// MUST be equal to $modal-duration in _modal.scss
+const TRANSITION_TIMEOUT = 300;
 
 const Modal = React.createClass({
   mixins: [ClassNameMixin],
@@ -130,8 +134,9 @@ const Modal = React.createClass({
 
     return (
       <div
-        ref="modal"
         className={classNames(this.props.className, classSet)}
+        key="modalActions"
+        ref="modal"
       >
         {this.props.children}
         <div className={this.prefixClass('actions-group')}>
@@ -160,8 +165,9 @@ const Modal = React.createClass({
     return (
       <div
         {...props}
-        ref="modal"
         className={classNames(className, classSet, this.setClassNS('popup'))}
+        key="modalPopup"
+        ref="modal"
       >
         <div className={this.setClassNS('popup-inner')}>
           <div className={this.setClassNS('popup-header')}>
@@ -260,6 +266,22 @@ const Modal = React.createClass({
     ) : null;
   },
 
+  // Using transition appear to fix animation issue on iOS Safari
+  // @see https://github.com/amazeui/amazeui-touch/issues/11
+  renderTransition(children) {
+    return (
+      <CSSTransitionGroup
+        transitionName={this.prefixClass('transition')}
+        transitionAppear={true}
+        transitionAppearTimeout={TRANSITION_TIMEOUT}
+        transitionEnterTimeout={TRANSITION_TIMEOUT}
+        transitionLeaveTimeout={TRANSITION_TIMEOUT}
+      >
+        {children}
+      </CSSTransitionGroup>
+    );
+  },
+
   renderBackdrop(children) {
     const onClick = this.handleBackdropClick || null;
     const preventDefault = (e) => {
@@ -290,7 +312,7 @@ const Modal = React.createClass({
   render() {
     let {
       closed,
-      isClosing
+      isClosing,
       } = this.state;
 
     if (closed) {
@@ -325,16 +347,15 @@ const Modal = React.createClass({
       modalHeight,
       ...props
       } = this.props;
-
     let modal;
 
     classSet[this.prefixClass('out')] = isClosing;
     role && (classSet[this.prefixClass(role)] = true);
 
     if (this.isActions()) {
-      modal = this.renderActions(classSet);
+      modal = this.renderTransition(this.renderActions(classSet));
     } else if (this.isPopup()) {
-      modal = this.renderPopup(classSet);
+      modal = this.renderTransition(this.renderPopup(classSet));
     } else {
       let style = {
         width: modalWidth,

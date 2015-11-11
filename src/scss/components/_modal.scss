@@ -142,9 +142,17 @@
 // Modal - Action
 // -----------------------------------------------------------------------------
 %modal-translate {
-  animation: modal-actions-in $modal-duration linear;
+  &.#{$modal-prefix}-transition-appear {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  &.#{$modal-prefix}-transition-appear-active {
+    transform: translate3d(0, 0, 0);
+    transition: transform $modal-duration linear;
+  }
+
   &.#{$modal-prefix}-out {
-    animation-name: modal-actions-out;
+    animation: amt-modal-transition-out $modal-duration linear;
   }
 }
 
@@ -164,16 +172,7 @@
   }
 }
 
-@keyframes modal-actions-in {
-  from {
-    transform: translate3d(0, 100%, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes modal-actions-out {
+@keyframes amt-modal-transition-out {
   to {
     transform: translate3d(0, 100%, 0);
   }
@@ -210,6 +209,11 @@
   overflow: hidden;
 
   @extend %modal-translate;
+}
+
+.#{$modal-prefix}-popup-appear-active {
+  color: red!important;
+  border: 1px solid red;
 }
 
 .#{$modal-popup-prefix}-inner {
