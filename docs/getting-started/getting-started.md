@@ -28,6 +28,20 @@
 - Browserify / [Webpack](http://webpack.github.io/)
 - [Grunt](http://gruntjs.com/)（廉颇老矣，尚能饭否？）
 
+## 兼容性
+
+### CSS
+
+- [Flexbox](http://caniuse.com/#feat=flexbox)
+
+  Amaze UI Touch 完全基于 flexbox 布局。由于[旧版规范](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/)中没有 `flex-shrink`、`flex-basis` 对应的属性，导致只支持旧版规范的浏览器无法正常渲染布局，暂时[没有找到解决方法（望赐教）](https://github.com/amazeui/amazeui-touch/issues/12) :( 。
+- [CSS3 Transitions](http://caniuse.com/#feat=css-transitions)
+- [CSS Animation](http://caniuse.com/#feat=css-animation)
+
+### JavaScript
+
+- ES5: Amaze UI Touch 基于 ES2015 编写，使用 Babel.js 转换为 ES5；
+- React.js: 0.1.x 兼容至 IE8。
 
 ## 编写页面
 
