@@ -162,6 +162,9 @@ let bsf = (options) => {
     entries: options.entries,
     debug: !isProduction,
     transform: transform,
+    // path map for fake `amazeui-touch` in `./kitchen-sink/`
+    // @see https://github.com/vigetlabs/gulp-starter/issues/17
+    paths: ['./kitchen-sink/'],
   }));
 };
 

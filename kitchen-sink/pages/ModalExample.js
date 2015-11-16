@@ -6,7 +6,7 @@ import {
   Modal,
   Field,
   List,
-} from '../UI';
+} from 'amazeui-touch';
 
 const ModalExample = React.createClass({
   open() {

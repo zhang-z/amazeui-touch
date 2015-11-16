@@ -6,7 +6,7 @@ import {
   ButtonGroup,
   Icon,
   Badge,
-} from '../UI';
+} from 'amazeui-touch';
 
 const ButtonExample = React.createClass({
   render() {

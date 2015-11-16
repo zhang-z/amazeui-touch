@@ -7,7 +7,7 @@ import {
   PopoverTrigger,
   Field,
   List,
-} from '../UI';
+} from 'amazeui-touch';
 
 const PopoverExample = React.createClass({
   render() {

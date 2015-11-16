@@ -4,7 +4,7 @@ import {
   Group,
   NavBar,
   amStyles,
-} from '../UI';
+} from 'amazeui-touch';
 
 const clickHandler = (item, e) => {
   e.preventDefault();

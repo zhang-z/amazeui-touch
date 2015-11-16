@@ -6,7 +6,7 @@ import {
   Icon,
   Badge,
   amStyles,
-} from '../UI';
+} from 'amazeui-touch';
 
 const TabBarDemo = React.createClass({
   getInitialState() {

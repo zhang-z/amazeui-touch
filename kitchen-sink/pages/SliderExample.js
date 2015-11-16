@@ -4,7 +4,7 @@ import {
   Group,
   Button,
   Slider,
-} from '../UI';
+} from 'amazeui-touch';
 
 const onSelect = function(index, direction) {
   console.log('激活的幻灯片编号：', index, '，滚动方向：', direction);

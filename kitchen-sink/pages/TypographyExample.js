@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Container,
   Group,
-} from '../UI'
+} from 'amazeui-touch'
 
 const TypographyExample = React.createClass({
   render() {

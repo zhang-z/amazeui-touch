@@ -3,7 +3,7 @@ import {
   Container,
   Accordion,
   Card,
-} from '../UI';
+} from 'amazeui-touch';
 
 const albums = [
   {

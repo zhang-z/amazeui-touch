@@ -48,6 +48,7 @@ input[type="range"] {
     width: $range-thumb-height;
     height: $range-thumb-height;
     margin-top: -$margin;
+    border: none; // remove black border for Safari (iOS 9.2)
 
     @if hasValue($range-thumb-radius) {
       border-radius: $range-thumb-radius;

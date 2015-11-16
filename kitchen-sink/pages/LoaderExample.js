@@ -4,7 +4,7 @@ import {
   Group,
   Loader,
   Field,
-} from '../UI';
+} from 'amazeui-touch';
 
 const LoaderExample = React.createClass({
   getInitialState() {

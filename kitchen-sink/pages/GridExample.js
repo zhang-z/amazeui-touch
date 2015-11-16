@@ -4,7 +4,7 @@ import {
   Group,
   Grid,
   Col
-} from '../UI';
+} from 'amazeui-touch';
 
 const GridExample = React.createClass({
   render() {

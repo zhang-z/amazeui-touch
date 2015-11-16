@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Container,
   Card,
-} from '../UI';
+} from 'amazeui-touch';
 
 const header = (
   <Card.Child cover="http://lorempixel.com/1000/625/people/">

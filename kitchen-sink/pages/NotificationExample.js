@@ -5,7 +5,7 @@ import {
   Notification,
   Button,
   Field,
-} from '../UI';
+} from 'amazeui-touch';
 
 const NotificationExample = React.createClass({
   getInitialState() {

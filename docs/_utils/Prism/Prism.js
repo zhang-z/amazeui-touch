@@ -604,11 +604,11 @@ Prism.amtHighlight = function(options) {
   }
 
   var grammar = Prism.languages[language];
-  var highlightedCode = text.replace("} from '../UI';", "} from 'amazeui-touch';");
   var langClassName = `language-${grammar ? language : 'unknown'}`;
+  var highlightedCode;
 
   if (grammar) {
-    highlightedCode = Prism.highlight(highlightedCode, grammar);
+    highlightedCode = Prism.highlight(text, grammar);
   }
 
   if (ln) {

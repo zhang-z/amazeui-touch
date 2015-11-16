@@ -3,7 +3,7 @@ import {
   Container,
   Badge,
   Group,
-} from '../UI';
+} from 'amazeui-touch';
 
 const styles = [
   null,

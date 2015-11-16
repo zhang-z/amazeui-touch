@@ -6,7 +6,7 @@ import {
   Badge,
   Card,
   Switch,
-} from '../UI';
+} from 'amazeui-touch';
 
 const img = <img width="32" src="http://lorempixel.com/128/128/people/" />;
 const img80 = <img width="80" src="http://lorempixel.com/160/160/people/" />;

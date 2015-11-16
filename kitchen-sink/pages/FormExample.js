@@ -9,7 +9,7 @@ import {
   Field,
   Button,
   Switch,
-} from '../UI';
+} from 'amazeui-touch';
 
 let fields = [
   {

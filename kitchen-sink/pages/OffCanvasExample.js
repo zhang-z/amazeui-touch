@@ -6,9 +6,9 @@ import {
   OffCanvas,
   OffCanvasTrigger,
   List,
-} from '../UI';
+} from 'amazeui-touch';
 
-const OffcanvasExample = React.createClass({
+const OffCanvasExample = React.createClass({
   render() {
     return (
       <Container {...this.props}>
@@ -66,4 +66,4 @@ const OffcanvasExample = React.createClass({
   }
 });
 
-export default OffcanvasExample;
+export default OffCanvasExample;

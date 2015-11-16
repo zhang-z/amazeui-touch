@@ -5,7 +5,7 @@ import {
   Container,
   NavBar,
   Group,
-} from '../UI';
+} from 'amazeui-touch';
 
 const About = React.createClass({
   render() {
