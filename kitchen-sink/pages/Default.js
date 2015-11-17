@@ -10,7 +10,7 @@ import {
   NavBar,
   Group,
   View,
-} from '../UI';
+} from 'amazeui-touch';
 
 let pages = [
   'Accordion',

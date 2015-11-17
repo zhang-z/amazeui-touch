@@ -15,7 +15,7 @@ import {
   NavBar,
   TabBar,
   View,
-} from './UI';
+} from 'amazeui-touch';
 
 import * as Pages from './pages';
 

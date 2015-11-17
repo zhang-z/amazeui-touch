@@ -1,14 +1,15 @@
 {
   "name": "amazeui-touch",
   "title": "Amaze UI Touch",
-  "version": "0.1.0-beta1",
+  "version": "0.1.0-beta",
   "description": "Web Components for Mobile UI based on React.js",
   "main": "lib/index.js",
   "scripts": {
     "start": "gulp",
     "build": "env NODE_ENV=production gulp build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "./node_modules/.bin/eslint ./src/js/"
+    "eslint": "./node_modules/.bin/eslint ./src/js/",
+    "changelog": "github-changes -o amazeui-touch -r amazeui-touch -a"
   },
   "repository": {
     "type": "git",

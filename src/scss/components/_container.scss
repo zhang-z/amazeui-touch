@@ -100,9 +100,10 @@
   // position: relative;
   max-height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 
   // Fixes: https://github.com/amazeui/amazeui-touch/issues/8
+  // @see https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW26
   // @see http://weblog.west-wind.com/posts/2015/Jun/05/IPad-Scroll-Issues-with-Fixed-Content
   // @see http://www.quirksmode.org/css/css2/overflowscrolling.html
   // - 如果声明的值为 `touch`，在结合 Container 使用时，Modal 的遮罩层在 safari 中会被截取遮挡
@@ -111,8 +112,7 @@
   //   http://blog.csdn.net/hursing/article/details/9186199
   // - 可以尝试使用绝对定位的方式定位 kitchen-sink 中的 navbar 和 tabbar，以避免这一问题，
   //   提高交互体验，具体可参考 Framework7 的实现方式
-  // 总而言之，使用 flexbox 来布局页面主体还是会遇到一些问题
-  -webkit-overflow-scrolling: auto;
+  // -webkit-overflow-scrolling: touch;
 
   // introduce iOS style springy scrolling
   &:before,
