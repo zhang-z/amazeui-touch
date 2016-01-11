@@ -2,7 +2,7 @@
 
 - `Fixed` 修复 Modal `open()` 方法判断逻辑始终为 `true` 的错误。
 
-### v0.1.0-beta1 (2015/11/17)
+### v0.1.0-beta2 (2015/11/17)
 
 - `Improved` [81c4c1a](https://github.com/amazeui/amazeui-touch/commit/81c4c1a23fa5fca4a3352e3a8711a79fa04d7b3b) 移除 `input[type="range"]` 在 Safari 中的黑色边框
 - `Improved`  [e39f2e0](https://github.com/amazeui/amazeui-touch/commit/e39f2e023ce9e7997adcafbb96e0cfbc0274ea97) #6 调整 View 样式

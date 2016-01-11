@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/amazeui/amazeui-touch#readme",
   "devDependencies": {
-    "babel": "^6.0.15",
+    "babel-core": "^6.3.17",
     "babel-eslint": "^4.1.4",
     "babel-loader": "^6.0.1",
     "babel-plugin-transform-object-rest-spread": "^6.0.14",
