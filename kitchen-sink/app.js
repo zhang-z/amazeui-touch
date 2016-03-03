@@ -5,7 +5,7 @@ import {
   Router,
   Route,
   Link,
-  History,
+  hashHistory,
   IndexRoute,
 } from 'react-router';
 
@@ -79,10 +79,6 @@ const NotFound = React.createClass({
 });
 
 const Detail = React.createClass({
-  // DO NOT NEED HERE.
-  // https://github.com/rackt/react-router/blob/master/docs/API.md#history-mixin
-  // mixins: [History],
-
   render() {
     let component = this.props.params.component;
 
@@ -117,7 +113,7 @@ const Detail = React.createClass({
 });
 
 const routes = (
-  <Router>
+  <Router history={hashHistory}>
     <Route path="/" component={App}>
       <Route path=":component" component={Detail} />
       <IndexRoute component={Default} />
