@@ -65,7 +65,7 @@ let TabBar = React.createClass({
 
 // TODO:
 //   Icon 应该支持用户自定义：
-//   React-native 采用 require('path/to/iocn') 的形式，
+//   React-native 采用 require('path/to/icon') 的形式，
 //   这里可能需要再添加一个属性
 TabBar.Item = React.createClass({
   mixins: [ClassNameMixin],

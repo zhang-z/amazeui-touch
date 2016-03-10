@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CSSTransitionGroup from 'react-addons-css-transition-group';
 import {
   Router,
   Route,
