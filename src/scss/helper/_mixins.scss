@@ -155,3 +155,14 @@
 %force-hardware-acceleration {
   @include force-hardware-acceleration();
 }
+
+
+// Browser compatibility
+// -----------------------------------------------------------------------------
+
+// 在安卓里 flex 里的子元素一定要是 block 元素，如果用行内元素 可以用flex-inline。
+// (不过flex-inline兼容也不好，所以全改成块元素就好了)
+// @see https://github.com/amazeui/amazeui-touch/issues/12#issuecomment-169879658
+@mixin fixes-flexbox-for-andriod {
+  display: block;
+}
