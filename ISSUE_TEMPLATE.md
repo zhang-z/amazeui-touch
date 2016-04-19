@@ -3,7 +3,7 @@
 > - 如果你想反馈 bug 或者使用问题，请**务必**按照以下格式提交，以便问题定位和解决，节省来回问答的时间；
 > - 如果你不熟悉 Markdown 语法，请先阅读 [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)；
 > - 如果你不知道如何上传文件，请参考 [File attachments on issues and pull requests](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests/)，或者留意一下输入框底部的小字 `Attach files by dragging & dropping, selecting them, or pasting from the clipboard.`，点击 **selecting them** 也可以上传；
-> - 最后，请在提交 issue 之前删除提示性的文字，包括本段、以及下面括号中的内容。
+> - 最后，请在提交 issue 之前删除提示性的文字，包括本行及以上部分，以及下面括号中的内容。
 
 ## 问题描述
 
