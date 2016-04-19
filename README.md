@@ -97,7 +97,7 @@ ES2015/JSX 编译参见 [Amaze UI Touch Starter Kit](https://github.com/amazeui/
 1. 克隆源代码并安装依赖：
 
    ``` bash
-   git clone https://github.com/allmobilize/amazeui-touch.git
+   git clone https://github.com/amazeui/amazeui-touch.git
    ```
 
    在源码目录下执行：
