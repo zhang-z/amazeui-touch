@@ -1,6 +1,19 @@
 ## Change Log
 
-- `Fixed` 修复 Modal `open()` 方法判断逻辑始终为 `true` 的错误。
+### v1.0.0-beta.1 (2016/04/25)
+
+- `Changed` [93fac1f](https://github.com/amazeui/amazeui-touch/commit/93fac1f8a17a1f9d61af3e401bb759f2f2467a3b) #39 **API 变更**：`onSelect` 与 React 事件 API 冲突，重命名为 `onAction`，涉及的组件包括：
+  - Modal
+  - NavBar
+  - Slider
+  - Tabs
+  - TabBar
+- `Fixed` [89bc1ff](https://github.com/amazeui/amazeui-touch/commit/89bc1ff022f3b9074409c33f09c24af3c471349f) 修复 React 15.x 读取 `key` 警告问题
+- `Changed` [721a2a7](https://github.com/amazeui/amazeui-touch/commit/721a2a72a63c20200b494d76655f81aca80914cd) #36 `react` 和 `react-dom` 移到 `peerDependencies`，解决使用时打包多个版本的问题
+- `Fixed` [3d6bbdc](https://github.com/amazeui/amazeui-touch/commit/3d6bbdc819175a0cf6b31185b2a7b3421e447a8c) 修复 flexbox 在部分安卓 UA 上的显示问题（Thx @leakl），至此 flexbox 兼容性问题主要剩下 NavBar 和 Grid
+- `Improved` [082c00f](https://github.com/amazeui/amazeui-touch/commit/082c00f2ad7d1e61c914238cc5eb326f73cb672e) 运行环境判断，为后端渲染做准备
+- `Fixed` [4903567](https://github.com/amazeui/amazeui-touch/commit/49035679e1e3c55e043eeae02df1dd62be8c71c9) #27 修复 Object.assign 没有转换问题
+- `Fixed` [dcdf80a](https://github.com/amazeui/amazeui-touch/commit/dcdf80a3dcbf1611c5422d4ded8b39de7781f9a0) 修复 Modal `open()` 方法判断逻辑始终为 `true` 的错误
 
 ### v0.1.0-beta2 (2015/11/17)
 

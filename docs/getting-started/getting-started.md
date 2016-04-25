@@ -74,6 +74,10 @@ ReactDOM.render(<Button>Hello World</Button>, document.getElementById('root'));
 
 HTML：
 
+**注意：**
+
+- `amazeui.touch.css`、`amazeui.touch.min.css` 位于 `node_modules/amazeui-touch/dist` 下。
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -82,8 +86,7 @@ HTML：
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <meta name="viewport"
-        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Amaze UI Touch</title>
   <meta name="renderer" content="webkit">
   <!-- No Baidu Siteapp-->

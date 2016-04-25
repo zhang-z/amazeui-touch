@@ -46,24 +46,24 @@ Amaze UI Touch 专为移动打造，在技术实现、交互设计上只考虑�
      Button,
    } from 'amazeui-touch';
 
-   const App = React.createClass({
-     getInitialState() {
-       return {
+   class App extends React.Component {
+     constructor(props) {
+       this.state = {
          said: false,
        };
-     },
+     }
 
      handleClick() {
        this.setState({
          said: true,
        });
-     },
+     }
 
      renderHello() {
        return this.state.said ? (
          <p>Hello World! Welcome to Amaze UI Touch.</p>
        ) : null;
-     },
+     }
 
      render() {
        const said = this.state.said;
