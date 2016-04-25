@@ -57,10 +57,9 @@ const Accordion = React.createClass({
     return React.Children.map(this.props.children, (child, index) => {
       let {
         eventKey,
-        key,
-        } = child.props;
+      } = child.props;
       let props = {
-        key: key ? key : index,
+        key: index,
         onSelect: this.handleSelect,
       };
 

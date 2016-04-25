@@ -40,13 +40,12 @@ let TabBar = React.createClass({
       >
         {React.Children.map(children, (child, index) => {
           let {
-            key,
             eventKey,
             onClick,
             ...props
             } = child.props;
           let clickHandler = onClick || onSelect;
-          key = key || eventKey || index;
+          let key = eventKey || index;
           eventKey = eventKey || key;
 
           return (

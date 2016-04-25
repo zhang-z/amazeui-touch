@@ -32,7 +32,7 @@ const Touchable = React.createClass({
       component: Component,
       onTap,
       ...props,
-      } = this.props;
+    } = this.props;
 
     if (supportTouch) {
       Object.assign(props, this.getTouchHandlers());

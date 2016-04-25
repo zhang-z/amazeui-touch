@@ -29,7 +29,8 @@ const Notification = React.createClass({
     return {
       classPrefix: 'notification',
       closeBtn: true,
-      onDismiss: () => {},
+      onDismiss: () => {
+      },
     };
   },
 
@@ -51,7 +52,7 @@ const Notification = React.createClass({
       animated,
       visible,
       ...props
-      } = this.props;
+    } = this.props;
 
     classSet[this.prefixClass('animated')] = animated;
 

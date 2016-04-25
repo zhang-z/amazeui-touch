@@ -27,7 +27,7 @@ const OffCanvas = React.createClass({
     if (e && e.target === this.refs.backdrop) {
       let {
         onDismiss,
-        } = this.props;
+      } = this.props;
 
       onDismiss && onDismiss();
     }
@@ -42,7 +42,7 @@ const OffCanvas = React.createClass({
       children,
       isClosing,
       ...props
-      } = this.props;
+    } = this.props;
 
     classSet[this.prefixClass('out')] = isClosing;
     classSet[this.prefixClass(placement)] = !!placement;

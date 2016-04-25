@@ -292,7 +292,7 @@ const Slider = React.createClass({
       className,
       children,
       ...props
-      } = this.props;
+    } = this.props;
 
     // TODO: 优化 swipe，左右方向阻止默认事件，垂直方向不阻止
     return (
@@ -382,7 +382,7 @@ Slider.Item = React.createClass({
       animateIn,
       animateOut,
       direction,
-      } = this.props;
+    } = this.props;
     let classSet = {
       active: (active && !animateIn) || animateOut,
       next: active && animateIn && direction === 'next',

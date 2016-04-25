@@ -160,7 +160,7 @@ const Modal = React.createClass({
       title,
       children,
       ...props
-      } = this.props;
+    } = this.props;
 
     return (
       <div
@@ -195,7 +195,7 @@ const Modal = React.createClass({
       title,
       closeBtn,
       role
-      } = this.props;
+    } = this.props;
     let closeIcon = closeBtn && !role ? (
       <Icon
         name="close"
@@ -227,7 +227,7 @@ const Modal = React.createClass({
       role,
       confirmText,
       cancelText,
-      } = this.props;
+    } = this.props;
 
     switch (role) {
       case 'alert':
@@ -313,7 +313,7 @@ const Modal = React.createClass({
     let {
       closed,
       isClosing,
-      } = this.state;
+    } = this.state;
 
     if (closed) {
       return null;
@@ -346,7 +346,7 @@ const Modal = React.createClass({
       modalWidth,
       modalHeight,
       ...props
-      } = this.props;
+    } = this.props;
     let modal;
 
     classSet[this.prefixClass('out')] = isClosing;

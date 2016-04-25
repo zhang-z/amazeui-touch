@@ -15,7 +15,8 @@ const Switch = React.createClass({
   getDefaultProps() {
     return {
       classPrefix: 'switch',
-      onValueChange: function() {},
+      onValueChange: function() {
+      },
     };
   },
 
@@ -26,7 +27,7 @@ const Switch = React.createClass({
       className,
       onValueChange,
       ...props
-      } = this.props;
+    } = this.props;
 
     return (
       <label

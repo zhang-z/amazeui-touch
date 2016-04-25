@@ -25,7 +25,7 @@ const ModalExample = React.createClass({
     if (role === 'confirm') {
       console.log('你的选择是：「' + (data ? '确定' : '取消')  + '」')
     } else if (role === 'prompt') {
-      console.log('输入的数据是：' + data);
+      console.log('输入的数据是：', data);
     }
   },
 

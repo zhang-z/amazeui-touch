@@ -122,4 +122,4 @@ ES2015/JSX 编译参见 [Amaze UI Touch Starter Kit](https://github.com/amazeui/
 
 ## License
 
-MIT © 2015 AllMobilize Inc.
+MIT © 2015 - 2016 AllMobilize Inc.

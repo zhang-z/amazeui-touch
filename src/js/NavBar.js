@@ -18,7 +18,8 @@ const NavBar = React.createClass({
   getDefaultProps() {
     return {
       classPrefix: 'navbar',
-      onSelect: () => {},
+      onSelect: () => {
+      },
     };
   },
 
@@ -26,7 +27,7 @@ const NavBar = React.createClass({
     let {
       titleOnLeft,
       title,
-      } = this.props;
+    } = this.props;
     let titlePosition = this.prefixClass(titleOnLeft ? 'left' : 'center');
 
     return title ? (
@@ -97,7 +98,7 @@ const NavBar = React.createClass({
       title,
       className,
       ...props
-      } = this.props;
+    } = this.props;
 
     return (
       <header

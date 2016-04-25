@@ -77,14 +77,13 @@ const Tabs = React.createClass({
     let navs = React.Children.map(this.props.children, (child, index) => {
       let {
         eventKey,
-        key,
         disabled,
         navSize,
         navStyle,
-        } = child.props;
+      } = child.props;
+      let key = index;
 
       eventKey = eventKey !== undefined ? eventKey : index;
-      key = key === undefined ? index : key;
       let active = eventKey === activeKey;
 
       return (
@@ -118,10 +117,9 @@ const Tabs = React.createClass({
     let activeKey = this.state.activeKey;
     let panels = React.Children.map(this.props.children, (child, index) => {
       let {
-        key,
         eventKey,
         children
-        } = child.props;
+      } = child.props;
 
       if (eventKey === undefined) {
         eventKey = index;
@@ -131,7 +129,7 @@ const Tabs = React.createClass({
         <Tabs.Item
           active={eventKey === activeKey}
           enventKey={eventKey}
-          key={key ? key : 'tabPanel' + index}
+          key={'tabPanel' + index}
         >
           {children}
         </Tabs.Item>
@@ -152,7 +150,7 @@ const Tabs = React.createClass({
     let {
       className,
       ...props
-      } = this.props;
+    } = this.props;
 
     return (
       <div
@@ -191,7 +189,7 @@ Tabs.Item = React.createClass({
       className,
       children,
       ...props
-      } = this.props;
+    } = this.props;
 
     classSet[this.prefixClass('panel')] = true;
 

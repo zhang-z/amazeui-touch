@@ -1,6 +1,5 @@
 import React, {cloneElement} from 'react';
 import ReactDOM from 'react-dom';
-import classNames from 'classnames';
 import ClassNameMixin from './mixins/ClassNameMixin';
 import OverlayMixin from './mixins/OverlayMixin';
 import CSSCore from './utils/CSSCore';
@@ -110,7 +109,7 @@ const OffCanvasTrigger = React.createClass({
   getPageContainer() {
     let {
       pageContainer
-      } = this.props;
+    } = this.props;
 
     return typeof pageContainer === 'string' ?
       document.querySelector(pageContainer) :
@@ -142,7 +141,7 @@ const OffCanvasTrigger = React.createClass({
     let offCanvas = this.props.offCanvas;
     let {
       isClosing,
-      } = this.state;
+    } = this.state;
 
     if (isClosing) {
       let node = this.getOverlayDOMNode();
