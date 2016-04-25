@@ -47,7 +47,7 @@ Modal 标题。
 
 点击遮罩层是否关闭 Modal。
 
-##### `onSelect`
+##### `onAction`
 
 > PropType: `func`
 

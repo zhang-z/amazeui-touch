@@ -17,7 +17,7 @@ const ModalExample = React.createClass({
     this.refs.modal.close();
   },
 
-  handleSelect(data) {
+  handleAction(data) {
     let role = this.refs.modal.props.role;
 
     // 确定和取消放在一起处理
@@ -41,7 +41,7 @@ const ModalExample = React.createClass({
 
         {React.cloneElement(React.Children.only(this.props.children), {
           ref: 'modal',
-          onSelect: this.handleSelect
+          onAction: this.handleAction
         })}
       </div>
     );

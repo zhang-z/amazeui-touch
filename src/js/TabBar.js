@@ -12,14 +12,14 @@ let TabBar = React.createClass({
     classPrefix: React.PropTypes.string,
     component: React.PropTypes.node,
     amStyle: React.PropTypes.string,
-    onSelect: React.PropTypes.func,
+    onAction: React.PropTypes.func,
   },
 
   getDefaultProps() {
     return {
       classPrefix: 'tabbar',
       component: 'nav',
-      onSelect: function() {}
+      onAction: function() {}
     };
   },
 
@@ -29,7 +29,7 @@ let TabBar = React.createClass({
       component: Component,
       className,
       children,
-      onSelect,
+      onAction,
       ...props
       } = this.props;
 
@@ -44,7 +44,7 @@ let TabBar = React.createClass({
             onClick,
             ...props
             } = child.props;
-          let clickHandler = onClick || onSelect;
+          let clickHandler = onClick || onAction;
           let key = eventKey || index;
           eventKey = eventKey || key;
 
@@ -89,7 +89,7 @@ TabBar.Item = React.createClass({
     return {
       classPrefix: 'tabbar',
       component: 'span',
-      onSelect: function() {
+      onAction: function() {
       }
     };
   },

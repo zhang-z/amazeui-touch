@@ -16,7 +16,7 @@
 
 激活选项卡的 `eventKey`。
 
-##### `onSelect`
+##### `onAction`
 
 > PropType: `func`
 

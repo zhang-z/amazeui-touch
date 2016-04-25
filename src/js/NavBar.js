@@ -12,13 +12,13 @@ const NavBar = React.createClass({
     leftNav: React.PropTypes.array,
     rightNav: React.PropTypes.array,
     titleOnLeft: React.PropTypes.bool,
-    onSelect: React.PropTypes.func,
+    onAction: React.PropTypes.func,
   },
 
   getDefaultProps() {
     return {
       classPrefix: 'navbar',
-      onSelect: () => {
+      onAction: () => {
       },
     };
   },
@@ -83,7 +83,7 @@ const NavBar = React.createClass({
       <Component
         href={item.href}
         key={'navbarNavItem' + index}
-        onClick={this.props.onSelect.bind(this, item)}
+        onClick={this.props.onAction.bind(this, item)}
         {...itemProps}
         className={classNames(this.prefixClass('nav-item'), itemProps.className)}
       >

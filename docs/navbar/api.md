@@ -47,7 +47,7 @@ const leftNav = [
 
 主标题是否居左，默认居中。
 
-##### `onSelect`
+##### `onAction`
 
 > PropType: `func`
 

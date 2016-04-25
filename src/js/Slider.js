@@ -27,7 +27,7 @@ const Slider = React.createClass({
     pauseOnHover: React.PropTypes.bool,
     // touch: React.PropTypes.bool,
 
-    onSelect: React.PropTypes.func,
+    onAction: React.PropTypes.func,
     onSlideEnd: React.PropTypes.func,
     activeIndex: React.PropTypes.number,
     defaultActiveIndex: React.PropTypes.number,
@@ -186,8 +186,8 @@ const Slider = React.createClass({
 
     direction = direction || this.getDirection(previousActiveIndex, index);
 
-    if (this.props.onSelect) {
-      this.props.onSelect(index, direction);
+    if (this.props.onAction) {
+      this.props.onAction(index, direction);
     }
 
     if (this.props.activeIndex == null && index !== previousActiveIndex) {

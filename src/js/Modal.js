@@ -29,7 +29,7 @@ const Modal = React.createClass({
     cancelText: React.PropTypes.string,
     closeBtn: React.PropTypes.bool,
     closeViaBackdrop: React.PropTypes.bool,
-    onSelect: React.PropTypes.func,
+    onAction: React.PropTypes.func,
     onOpen: React.PropTypes.func,
     onClosed: React.PropTypes.func,
   },
@@ -40,7 +40,7 @@ const Modal = React.createClass({
       confirmText: '确定',
       cancelText: '取消',
       closeBtn: true,
-      onSelect: () => {
+      onAction: () => {
       },
       onOpen: () => {
       },
@@ -97,7 +97,7 @@ const Modal = React.createClass({
     }
 
     this.close();
-    this.props.onSelect.call(this, data, e);
+    this.props.onAction.call(this, data, e);
   },
 
   open() {

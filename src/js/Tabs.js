@@ -10,7 +10,7 @@ const Tabs = React.createClass({
   propTypes: {
     classPrefix: React.PropTypes.string,
     defaultActiveKey: React.PropTypes.any,
-    onSelect: React.PropTypes.func,
+    onAction: React.PropTypes.func,
   },
 
   getDefaultProps() {
@@ -59,8 +59,8 @@ const Tabs = React.createClass({
       return null;
     }
 
-    if (this.props.onSelect) {
-      this.props.onSelect(key);
+    if (this.props.onAction) {
+      this.props.onAction(key);
     }
 
     if (activeKey !== key) {

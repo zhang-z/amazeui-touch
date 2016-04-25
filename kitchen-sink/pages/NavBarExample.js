@@ -25,19 +25,19 @@ const dataAll = {
   title: 'Navbar',
   leftNav: [{...itemLeft, icon: 'left-nav'}],
   rightNav: [{...itemRight, icon: 'right-nav'}],
-  onSelect: clickHandler,
+  onAction: clickHandler,
 };
 
 const dataLeft = {
   title: 'Navbar',
   leftNav: [{...itemLeft, icon: 'left-nav'}],
-  onSelect: clickHandler,
+  onAction: clickHandler,
 };
 
 const dataRight = {
   title: 'Navbar',
   rightNav: [itemRight, itemRight],
-  onSelect: clickHandler,
+  onAction: clickHandler,
 };
 
 const NavBarExample = React.createClass({
