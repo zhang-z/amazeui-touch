@@ -55,14 +55,17 @@ const NavBar = React.createClass({
   renderNavItem(item, index) {
     let Component = item.component || 'a';
     let itemProps = item.props || {};
-    let navTitle = item.title ? (
+    let children = [];
+
+    item.title && children.push(
       <span
         className={this.prefixClass('nav-title')}
         key='title'
       >
         {item.title}
       </span>
-    ) : null;
+    );
+
     let navIconKey = 'icon';
     let navIcon = item.customIcon ? (
       <img
@@ -79,15 +82,36 @@ const NavBar = React.createClass({
       />
     ) : null;
 
+    navIcon && children.push(navIcon);
+
+    let {
+      itemClassName,
+      ...otherProps
+    } = itemProps;
+    let props = {
+      href: item.href,
+      key: 'navbarNavItem' + index,
+      onClick: this.props.onAction.bind(this, item),
+      ...otherProps,
+      className: classNames(this.prefixClass('nav-item'), itemClassName),
+    };
+    let renderChildren = () => {
+      // #40
+      // if `Component` is a cloning type like OffCanvasTrigger,
+      // this should return a element with the className.
+      // TBC: should other props be transferred to the span element?
+      return item.isCloning ? (
+        <span
+          className={props.className}
+        >
+          {children}
+        </span>
+      ) : children;
+    };
+
     return (
-      <Component
-        href={item.href}
-        key={'navbarNavItem' + index}
-        onClick={this.props.onAction.bind(this, item)}
-        {...itemProps}
-        className={classNames(this.prefixClass('nav-item'), itemProps.className)}
-      >
-        {[navTitle, navIcon]}
+      <Component {...props}>
+        {renderChildren()}
       </Component>
     );
   },

@@ -28,6 +28,7 @@ const leftNav = [
     component: 'a', // 默认为 `a`
     title: 'Left',
     href: '',
+    isCloning: false, // 可选，如果 component 为 OffCanvas 之类的组件时，设为 true
     props: {
     }, // 其他要传递的属性
   },

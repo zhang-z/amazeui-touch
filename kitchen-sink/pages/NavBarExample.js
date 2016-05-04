@@ -4,6 +4,8 @@ import {
   Group,
   NavBar,
   amStyles,
+  OffCanvas,
+  OffCanvasTrigger,
 } from 'amazeui-touch';
 
 const clickHandler = (item, e) => {
@@ -38,6 +40,19 @@ const dataRight = {
   title: 'Navbar',
   rightNav: [itemRight, itemRight],
   onAction: clickHandler,
+};
+
+var withOffCanvas = {
+  title: 'With OffCanvas',
+  rightNav: [{
+    icon: 'bars',
+    title: 'Menu',
+    component: OffCanvasTrigger,
+    isCloning: true, // IMPORTANT
+    props: {
+      offCanvas: <OffCanvas><p>OffCanvas 内容</p></OffCanvas>,
+    }
+  }],
 };
 
 const NavBarExample = React.createClass({
@@ -85,6 +100,15 @@ const NavBarExample = React.createClass({
             {...dataRight}
             title="Title on Left"
             titleOnLeft
+          />
+        </Group>
+        
+        <Group
+          header="With OffCanvas"
+        >
+          <NavBar
+            {...withOffCanvas}
+            amStyle="primary"
           />
         </Group>
       </Container>
