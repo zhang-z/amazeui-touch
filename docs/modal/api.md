@@ -73,7 +73,7 @@ Modal 打开时的回调函数。
 
 Modal 关闭以后的回调函数。
 
-##### `onRequestClose`
+##### `onDismiss`
 
 > PropType: `func`
 

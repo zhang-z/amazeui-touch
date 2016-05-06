@@ -76,10 +76,9 @@ const ModalExample = React.createClass({
         <Modal
           ref="modal"
           isOpen={this.state.isModalOpen}
-          onRequestClose={this.closeModal}
+          onDismiss={this.closeModal}
           onOpen={this.onOpen}
           onClosed={this.onClosed}
-          onBeforeConfirm={this.onBeforeConfirm}
           onAction={this.handleAction}
           {...this.props.modalProps}
         >

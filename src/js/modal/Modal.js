@@ -36,7 +36,7 @@ const Modal = createClass({
     onAction: PropTypes.func,
     onOpen: PropTypes.func,
     onClosed: PropTypes.func,
-    onRequestClose: PropTypes.func,
+    onDismiss: PropTypes.func,
   },
 
   getDefaultProps() {
@@ -48,7 +48,7 @@ const Modal = createClass({
       onAction: noop,
       onOpen: noop,
       onClosed: noop,
-      onRequestClose: noop,
+      onDismiss: noop,
     };
   },
 
@@ -155,7 +155,7 @@ const Modal = createClass({
 
   // for user actions
   requestClose(e) {
-    this.props.onRequestClose(e);
+    this.props.onDismiss(e);
   },
 
   handleClosed() {
