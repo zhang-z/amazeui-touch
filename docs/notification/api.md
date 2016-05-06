@@ -46,6 +46,12 @@
 
 通知栏是否可见，使用时 `visible` 为 `true` 打开通知，否则关闭。
 
+##### `static`
+
+> PropType: `bool`
+
+是否渲染为静态的通知栏。
+
 ##### `onDismiss`
 
 > PropType: `func`
