@@ -21,7 +21,7 @@ export {default as Icon} from './Icon';
 export {default as Field} from './Field';
 export {default as List} from './List';
 export {default as Loader} from './Loader';
-export {default as Modal} from './Modal';
+export {default as Modal} from './modal';
 export {default as NavBar} from './NavBar';
 export {default as Notification} from './Notification';
 export {default as OffCanvas} from './OffCanvas';
