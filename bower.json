@@ -38,9 +38,6 @@
     "webpack.config.js"
   ],
   "dependencies": {
-    "classnames": "^2.2.0",
-    "react": "^0.14.3",
-    "react-addons-css-transition-group": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react": "^15.0.2"
   }
 }
