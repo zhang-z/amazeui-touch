@@ -4,9 +4,11 @@ import {
   Container,
   Group,
   Button,
+  ButtonGroup,
   Modal,
   Field,
   List,
+  Icon,
 } from 'amazeui-touch';
 
 const ModalExample = React.createClass({
@@ -85,6 +87,105 @@ const ModalExample = React.createClass({
           {this.getModalRole() !== 'loading' && this.props.children}
         </Modal>
       </div>
+    );
+  }
+});
+
+const LoginModal = React.createClass({
+  getInitialState() {
+    return {
+      isOpen: false,
+    };
+  },
+
+  open() {
+    this.setState({
+      isOpen: true,
+    })
+  },
+
+  close() {
+    this.setState({
+      isOpen: false,
+    });
+  },
+
+  handleLogin(e) {
+    let userName = this.refs.userName;
+    let pwd = this.refs.pwd;
+
+    if (!userName.getValue() || !pwd.getValue()) {
+      this.setState({
+        invalid: true
+      });
+
+      userName.getFieldDOMNode().focus();
+      return;
+    }
+
+    this.setState({
+      invalid: false
+    }, () => {
+      console.info('Valid, do something else.');
+      this.close();
+    });
+  },
+
+  render() {
+    return (
+      <Group
+        header="Login Modal"
+      >
+        <Button
+          amStyle="success"
+          onClick={this.open}
+        >
+          Login
+        </Button>
+        <Modal
+          isOpen={this.state.isOpen}
+          title="Login"
+          onDismiss={this.close}
+        >
+          <List
+            className="margin-v-sm"
+          >
+            <List.Item
+              media={<Icon name="person" />}
+              nested="input"
+            >
+              <Field
+                ref="userName"
+                placeholder='User Name'
+              />
+            </List.Item>
+            <List.Item
+              media={<Icon name="info" />}
+              nested="input"
+            >
+              <Field
+                ref="pwd"
+                type="password"
+                placeholder='PassWord'
+              />
+            </List.Item>
+          </List>
+          {this.state.invalid ? <p style={{color: 'red'}}>请填写相关信息</p> : null}
+          <ButtonGroup justify>
+            <Button
+              onClick={this.close}
+            >
+              Cancel
+            </Button>
+            <Button
+              amStyle="primary"
+              onClick={this.handleLogin}
+            >
+              Login
+            </Button>
+          </ButtonGroup>
+        </Modal>
+      </Group>
     );
   }
 });
@@ -212,6 +313,8 @@ const ModalExamples = React.createClass({
           </p>
           </ModalExample>
         </Group>
+
+        <LoginModal />
       </Container>
     );
   }
