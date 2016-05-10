@@ -118,7 +118,8 @@ const Tabs = React.createClass({
     let panels = React.Children.map(this.props.children, (child, index) => {
       let {
         eventKey,
-        children
+        children,
+        ...props
       } = child.props;
 
       if (eventKey === undefined) {
@@ -130,6 +131,7 @@ const Tabs = React.createClass({
           active={eventKey === activeKey}
           enventKey={eventKey}
           key={'tabPanel' + index}
+          {...props}
         >
           {children}
         </Tabs.Item>
@@ -173,6 +175,7 @@ Tabs.Item = React.createClass({
     eventKey: React.PropTypes.any,
     disabled: React.PropTypes.bool,
     active: React.PropTypes.bool,
+    noPadded: React.PropTypes.bool,
     navSize: React.PropTypes.string,
     navStyle: React.PropTypes.string,
   },
@@ -188,10 +191,13 @@ Tabs.Item = React.createClass({
     let {
       className,
       children,
+      noPadded,
       ...props
     } = this.props;
+    const elementName = 'panel';
 
-    classSet[this.prefixClass('panel')] = true;
+    classSet[this.prefixClass(elementName)] = true;
+    classSet[this.prefixClass(`${elementName}-no-padded`)] = noPadded;
 
     return (
       <div
@@ -205,3 +211,5 @@ Tabs.Item = React.createClass({
 });
 
 export default Tabs;
+
+// TODO: Nav 的可定制性，如允许传入 Router 的 Link 组件
