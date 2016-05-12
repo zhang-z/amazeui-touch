@@ -90,10 +90,7 @@ const Detail = React.createClass({
       component: Link,
       icon: 'left-nav',
       title: '返回',
-      props: {
-        to: '/',
-        // onClick: () => this.props.history.goBack(),
-      }
+      to: '/',
     };
 
     return (

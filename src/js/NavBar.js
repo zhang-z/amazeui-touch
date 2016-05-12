@@ -54,16 +54,33 @@ const NavBar = React.createClass({
   },
 
   renderNavItem(item, index) {
-    let Component = item.component || 'a';
-    let itemProps = item.props || {};
+    let {
+      component: Component,
+      title,
+      customIcon,
+      icon,
+      isClone,
+      // href,
+      className,
+      ...otherProps,
+    } = item;
     let children = [];
+    let itemClassName = classNames(this.prefixClass('nav-item'), className);
+    let itemProps = {
+      key: 'navbarNavItem' + index,
+      onClick: this.props.onAction.bind(this, item),
+      ...otherProps,
+      className: itemClassName,
+    };
 
-    item.title && children.push(
+    Component = Component || 'a';
+
+    title && children.push(
       <span
         className={this.prefixClass('nav-title')}
         key='title'
       >
-        {item.title}
+        {title}
       </span>
     );
 
@@ -73,19 +90,19 @@ const NavBar = React.createClass({
       // affected by order and icon order changing
       // .navbar-nav-title ~ .navbar-icon not works
       // add an className to set styles
-      [this.prefixClass('icon-sibling-of-title')]: !!item.title,
+      [this.prefixClass('icon-sibling-of-title')]: !!title,
     };
-    let navIcon = item.customIcon ? (
+    let navIcon = customIcon ? (
       <img
-        src={item.customIcon}
+        src={customIcon}
         className={classNames(iconClassName)}
-        alt={item.title || null}
+        alt={title || null}
         key={navIconKey}
       />
-    ) : item.icon ? (
+    ) : icon ? (
       <Icon
         className={classNames(iconClassName)}
-        name={item.icon}
+        name={icon}
         key={navIconKey}
       />
     ) : null;
@@ -97,26 +114,15 @@ const NavBar = React.createClass({
       Array.prototype[action].call(children, navIcon);
     }
     // navIcon && children.push(navIcon);
-
-    let {
-      itemClassName,
-      ...otherProps
-    } = itemProps;
-    let props = {
-      href: item.href,
-      key: 'navbarNavItem' + index,
-      onClick: this.props.onAction.bind(this, item),
-      ...otherProps,
-      className: classNames(this.prefixClass('nav-item'), itemClassName),
-    };
+    
     let renderChildren = () => {
       // #40
-      // if `Component` is a cloning type like OffCanvasTrigger,
+      // if `Component` is a clone type like OffCanvasTrigger,
       // this should return a element with the className.
       // TBC: should other props be transferred to the span element?
-      return item.isCloning ? (
+      return isClone ? (
         <span
-          className={props.className}
+          className={itemClassName}
         >
           {children}
         </span>
@@ -124,7 +130,7 @@ const NavBar = React.createClass({
     };
 
     return (
-      <Component {...props}>
+      <Component {...itemProps}>
         {renderChildren()}
       </Component>
     );

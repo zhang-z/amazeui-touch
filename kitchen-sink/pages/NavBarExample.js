@@ -48,10 +48,8 @@ var withOffCanvas = {
     icon: 'bars',
     title: 'Menu',
     component: OffCanvasTrigger,
-    isCloning: true, // IMPORTANT
-    props: {
-      offCanvas: <OffCanvas><p>OffCanvas 内容</p></OffCanvas>,
-    }
+    isClone: true, // IMPORTANT
+    offCanvas: <OffCanvas><p>OffCanvas 内容</p></OffCanvas>,
   }],
 };
 

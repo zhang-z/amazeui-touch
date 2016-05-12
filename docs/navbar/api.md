@@ -28,9 +28,10 @@ const leftNav = [
     component: 'a', // 默认为 `a`
     title: 'Left',
     href: '',
-    isCloning: false, // 可选，如果 component 为 OffCanvas 之类的组件时，设为 true
-    props: {
-    }, // 其他要传递的属性
+    customIcon: '', // 自定义图标 URL
+    icon: '', // 图标名称，如果设置了自定义图标，则 `icon` 失效
+    isClone: false, // 可选，如果 component 为 OffCanvasTrigger 之类的组件时，设为 true
+    //... 其他属性
   },
 ];
 ```
@@ -79,12 +80,12 @@ if (/android/i.test(ua) && /ucbrowser/i.test(ua)) {
 }
 ```
 
-上面的 JS 需要开发者手动添加到自己的项目中（以下样式已经集成在 CSS 文件中，）。
-
 ```css
 .ua-android-uc .navbar-nav-itme {
   display: inline-block;
 }
 ```
+
+由于测试面有限，上面的 JS 暂未添加到源码， 需要开发者手动添加到项目中（样式已经集成在 CSS 文件中，）。
 
 ## 示例
