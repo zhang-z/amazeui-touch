@@ -117,6 +117,11 @@ $z-index-popover: $z-index-base + 30 !default;
 // Components Variables
 // -----------------------------------------------------------------------------
 
+// Compatibility
+// - set NavBar & Col width for browsers which don't support flex-basis
+// -----------------------------------------------------------------------------
+$legacyFlexBoxSupport: true !default;
+
 // Base
 // -----------------------------------------------------------------------------
 $body-background: #f4f4f4 !default;

@@ -41,6 +41,7 @@ const NavBar = React.createClass({
 
   renderNav(position) {
     let nav = this.props[position + 'Nav'];
+    this._navPosition = position;
 
     return nav && Array.isArray(nav) ? (
       <div
@@ -66,23 +67,36 @@ const NavBar = React.createClass({
       </span>
     );
 
-    let navIconKey = 'icon';
+    const navIconKey = 'icon';
+    const iconClassName = {
+      [this.prefixClass('icon')]: true,
+      // affected by order and icon order changing
+      // .navbar-nav-title ~ .navbar-icon not works
+      // add an className to set styles
+      [this.prefixClass('icon-sibling-of-title')]: !!item.title,
+    };
     let navIcon = item.customIcon ? (
       <img
         src={item.customIcon}
-        className={this.prefixClass('icon')}
+        className={classNames(iconClassName)}
         alt={item.title || null}
         key={navIconKey}
       />
     ) : item.icon ? (
       <Icon
-        className={this.prefixClass('icon')}
+        className={classNames(iconClassName)}
         name={item.icon}
         key={navIconKey}
       />
     ) : null;
 
-    navIcon && children.push(navIcon);
+    // adjust title and icon order for Android UC
+    // @see ../scss/helper/_mixins.scss `navbar-item-android-uc-fallback` mixin
+    if (navIcon) {
+      const action = this._navPosition === 'left' ? 'unshift' : 'push';
+      Array.prototype[action].call(children, navIcon);
+    }
+    // navIcon && children.push(navIcon);
 
     let {
       itemClassName,
