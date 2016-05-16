@@ -1,6 +1,5 @@
-// TODO: why `export Button from './Button'` not works?
 // @see http://jamesknelson.com/re-exporting-es6-modules/
-// @see https://github.com/Microsoft/TypeScript/issues/2726
+// @see http://exploringjs.com/es6/ch_modules.html#sec_all-exporting-styles
 
 export const VERSION = '__VERSION__';
 
