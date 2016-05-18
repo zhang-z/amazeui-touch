@@ -40,7 +40,6 @@
     flex: 1 1 0;
     position: relative;
   }
-
 }
 
 .#{$container-prefix}-column {
@@ -58,7 +57,7 @@
 }
 
 // Handle alignment of containers' children
-
+// -----------------------------------------------------------------------------
 .#{$container-prefix}-align-end {
   align-items: flex-end;
 }
@@ -77,7 +76,7 @@
 }
 
 // Handle justification of containers' children
-
+// -----------------------------------------------------------------------------
 .#{$container-prefix}-justified {
   justify-content: space-around;
 }
@@ -95,7 +94,7 @@
 }
 
 // Scrollable containers
-
+// -----------------------------------------------------------------------------
 .#{$container-prefix}-scrollable {
   // position: relative;
   max-height: 100%;
