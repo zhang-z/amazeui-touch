@@ -76,12 +76,12 @@ NavBar 两侧的链接（`.navbar-nav-item`）应用 `display: inline-flex` 以�
 ```javascript
 var ua = navigator.userAgent;
 if (/android/i.test(ua) && /ucbrowser/i.test(ua)) {
-  document.documentElement.className += ' ua-android-uc';
+  document.documentElement.className += ' ua-stupid-uc';
 }
 ```
 
 ```css
-.ua-android-uc .navbar-nav-itme {
+.ua-stupid-uc .navbar-nav-itme {
   display: inline-block;
 }
 ```
