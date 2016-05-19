@@ -5,7 +5,9 @@
 ### 开发环境配置
 
 - 下载安装 [Node.js](https://nodejs.org/en/download/)（推荐使用 `4.x` LTS 最新正式版）
-- 一些 npm 模块编译需要环境支持，Windows 用户会麻烦一些，具体配置说明参见：https://github.com/nodejs/node-gyp#installation
+- 一些 npm 模块编译需要环境支持，Windows 用户会麻烦一些，具体配置说明参见：
+  - [https://github.com/nodejs/node-gyp#installation]()
+  - [Setting up Node.js on Windows 10](https://blog.risingstack.com/node-js-windows-10-tutorial/)
 
 ### 预备知识
 

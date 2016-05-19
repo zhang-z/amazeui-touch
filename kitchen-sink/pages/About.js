@@ -43,6 +43,11 @@ const About = React.createClass({
         >
           <p>MIT © 2015 - {this.props.year} AllMobilize Inc.</p>
         </Group>
+        <Group
+          header="UA"
+        >
+          <p><code>{navigator.userAgent}</code></p>
+        </Group>
       </Container>
     )
   }

@@ -69,7 +69,6 @@ const NavBarExample = React.createClass({
   render() {
     return (
       <Container {...this.props}>
-        {/*<p>{navigator.userAgent}</p>*/}
         <Group
           header="颜色样式"
         >
