@@ -305,6 +305,7 @@ const Slider = React.createClass({
         onSwipeLeft={this.handleSwipeLeft}
         onSwipeRight={this.handleSwipeRight}
         preventDefault={false}
+        stopPropagation={true}
       >
         <ul className={this.prefixClass('slides')}>
           {React.Children.map(children, this.renderItem)}
