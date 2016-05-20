@@ -19,6 +19,7 @@ let TouchableMixin = {
     onSingleTap: PropTypes.func,
     onDoubleTap: PropTypes.func,
     onPress: PropTypes.func,
+    onTouchMove: PropTypes.func,
   },
 
   getDefaultProps() {
@@ -34,7 +35,10 @@ let TouchableMixin = {
     return {
       startTouch: null,
       endTouch: null,
-      touch: {},
+      touch: {
+        deltaXSum: 0,
+        deltaYSum: 0,
+      },
       deltaX: 0,
       deltaY: 0,
     };
@@ -60,6 +64,8 @@ let TouchableMixin = {
       // This can occur if touchcancel doesn't fire due to preventDefault, etc.
       touch.x2 = undefined;
       touch.y2 = undefined;
+      touch.deltaXSum = 0;
+      touch.deltaYSum = 0;
     }
 
     let now = Date.now();
@@ -94,9 +100,12 @@ let TouchableMixin = {
     let endTouch = e.touches[0];
     let {
       touch,
-      deltaX,
-      deltaY,
+      startTouch,
+      endTouch: lastTouch,
     } = this.state;
+    lastTouch = lastTouch || startTouch;
+    let deltaX = endTouch.pageX - lastTouch.pageX;
+    let deltaY = endTouch.pageY - lastTouch.pageY;
 
     this._cancelPress();
 
@@ -104,8 +113,8 @@ let TouchableMixin = {
     touch.y2 = endTouch.pageY;
 
     // finger moving distance
-    deltaX += Math.abs(touch.x1 - touch.x2);
-    deltaY += Math.abs(touch.y1 - touch.y2);
+    touch.deltaXSum += Math.abs(deltaX);
+    touch.deltaYSum += Math.abs(deltaY);
 
     this.setState({
       deltaX,
@@ -113,6 +122,18 @@ let TouchableMixin = {
       touch,
       endTouch,
     });
+
+    let event = {
+      type: 'touchMove',
+      touch,
+      startTouch,
+      endTouch,
+      deltaX,
+      deltaY,
+      preventDefault: () => {
+      },
+    };
+    this._handleEvent(event);
   },
 
   handleTouchEnd(e) {
@@ -136,6 +157,8 @@ let TouchableMixin = {
       touch,
       startTouch,
       endTouch,
+      deltaX,
+      deltaY,
       preventDefault: () => {
       },
     };
@@ -158,7 +181,7 @@ let TouchableMixin = {
     else if ('last' in touch) {
       // don't fire tap when delta position changed by more than 30 pixels,
       // for instance when moving to a point and back to origin
-      if (deltaX < moveThreshold && deltaY < moveThreshold) {
+      if (touch.deltaXSum < moveThreshold && touch.deltaYSum < moveThreshold) {
         // delay by one tick so we can cancel the 'tap' event if 'scroll' fires
         // ('tap' fires before 'scroll')
         this._tapTimeout = setTimeout(() => {
