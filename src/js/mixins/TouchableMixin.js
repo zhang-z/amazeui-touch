@@ -103,9 +103,15 @@ let TouchableMixin = {
       startTouch,
       endTouch: lastTouch,
     } = this.state;
+
+    let deltaX, deltaY;
     lastTouch = lastTouch || startTouch;
-    let deltaX = endTouch.pageX - lastTouch.pageX;
-    let deltaY = endTouch.pageY - lastTouch.pageY;
+    if (lastTouch) {
+      deltaX = endTouch.pageX - lastTouch.pageX;
+      deltaY = endTouch.pageY - lastTouch.pageY;
+    } else {
+      deltaX = deltaY = 0;
+    }
 
     this._cancelPress();
 
